@@ -1,6 +1,7 @@
+// Load environment variables
+
 import express from "express";
 import cors from "cors";
-import "./loadEnvironment.mjs";
 import "express-async-errors";
 import posts from "./routes/posts.mjs";
 
@@ -9,6 +10,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// Load the /posts routes
 app.use("/posts", posts);
 
 // Global error handling
